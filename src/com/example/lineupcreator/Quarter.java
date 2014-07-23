@@ -3,20 +3,23 @@ package com.example.lineupcreator;
 import java.util.ArrayList;
 
 /**
+ * Various quarters
+ * 
+ * @author Rafi
+ */
+enum QuarterName{
+	Q1, Q2, Q3, Q4;
+}
+
+/**
  * The field with containing all playing players
  * 
  * @author Rafi
  */
 public class Quarter {
 	/**
-	 * Various quarters
-	 * 
-	 * @author Rafi
+	 * The name of the quarter
 	 */
-	enum QuarterName{
-		Q1, Q2, Q3, Q4;
-	}
-	
 	private QuarterName quarter;
 	
 	/**
