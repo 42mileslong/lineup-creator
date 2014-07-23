@@ -17,6 +17,8 @@ public class Quarter {
 		Q1, Q2, Q3, Q4;
 	}
 	
+	private QuarterName quarter;
+	
 	/**
 	 * The players in various positions
 	 */
@@ -25,8 +27,8 @@ public class Quarter {
 	/**
 	 * Default constructor
 	 */
-	public Quarter() {
-		
+	public Quarter(QuarterName quarter) {
+		this.quarter = quarter;
 	}
 	
 	/**
@@ -37,6 +39,7 @@ public class Quarter {
 	 */
 	public void setPlayer(Player player, int row, int column) {
 		field.get(row).get(column).setPositionPlayer(player);
+		player.addQuarter(quarter);
 	}
 	
 	/**

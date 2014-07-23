@@ -2,6 +2,8 @@ package com.example.lineupcreator;
 
 import java.util.ArrayList;
 
+import com.example.lineupcreator.Quarter.QuarterName;
+
 /**
  * Individual player information
  * 
@@ -16,7 +18,7 @@ public class Player {
 	/**
 	 * An ArrayList of the quarters the player is in the game
 	 */
-	private ArrayList<Quarter> quartersInGame = new ArrayList<Quarter>();
+	private ArrayList<QuarterName> quartersInGame = new ArrayList<QuarterName>();
 
 	/**
 	 * Default constructor
@@ -33,14 +35,6 @@ public class Player {
 	 */
 	public String getName() {
 		return this.name;
-	}
-	
-	/**
-	 * Adds a quarter to the player's list
-	 * @param quarter the quarter to be added
-	 */
-	public void addQuarter(Quarter quarter) {
-		this.quartersInGame.add(quarter);
 	}
 	
 	/**
