@@ -16,12 +16,24 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.TextView;
 
 
 public class MainActivity extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
+	/* My Methods */
+	
+	/**
+	 * Adds a player, gets input from button
+	 */
+	public static void addPlayer() {
+		//TODO make this actually do something
+	}
+
+	/* Prebuilt Methods */
+	
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
      */

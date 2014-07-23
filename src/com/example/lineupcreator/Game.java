@@ -10,7 +10,7 @@ public class Game {
 	/**
 	 * THE team
 	 */
-	private static Team team = new Team();
+	public static Team team = new Team();
 	
 	/**
 	 * THE quarters
