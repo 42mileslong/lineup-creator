@@ -4,7 +4,6 @@ package com.example.lineupcreator;
  * Individual player information
  * 
  * @author Rafi
- *
  */
 public class Player {
 	/**
