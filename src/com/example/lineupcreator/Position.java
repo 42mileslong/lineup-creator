@@ -9,12 +9,28 @@ public class Position {
 	/**
 	 * The player playing the position
 	 */
-	public Player positionPlayer = null;
+	private Player positionPlayer = null;
 	
 	/**
 	 * Default constructor
 	 */
-	public Position() {
+	private Position() {
 		
+	}
+
+	/**
+	 * Default getter
+	 * @return player
+	 */
+	public Player getPositionPlayer() {
+		return positionPlayer;
+	}
+
+	/**
+	 * Default setter
+	 * @param player the player to be set
+	 */
+	public void setPositionPlayer(Player player) {
+		this.positionPlayer = player;
 	}
 }
