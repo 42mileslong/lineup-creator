@@ -44,4 +44,12 @@ public class Player {
 	public Quarter[] getQuarters() {
 		return (Quarter[]) quartersInGame.toArray();
 	}
+
+	/**
+	 * Adds a quarter to their list of quarters
+	 * @param quarter the quarter to be added
+	 */
+	public void addQuarter(QuarterName quarter) {
+		quartersInGame.add(quarter);
+	}
 }
