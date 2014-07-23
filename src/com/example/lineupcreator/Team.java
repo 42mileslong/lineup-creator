@@ -11,7 +11,7 @@ public class Team {
 	/**
 	 * A set of players
 	 */
-	public ArrayList<Player> players = new ArrayList<Player>();
+	private ArrayList<Player> players = new ArrayList<Player>();
 	
 	/**
 	 * Default constructor
@@ -36,6 +36,14 @@ public class Team {
 	 */
 	public Player getPlayer(int n) {
 		return players.get(n);
+	}
+	
+	/**
+	 * Adds the player to the players
+	 * @param player the player to be added
+	 */
+	public void addPlayer(Player player) {
+		players.add(player);
 	}
 	
 	/**
