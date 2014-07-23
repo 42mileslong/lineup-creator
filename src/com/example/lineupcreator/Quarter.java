@@ -9,6 +9,15 @@ import java.util.ArrayList;
  */
 public class Quarter {
 	/**
+	 * Various quarters
+	 * 
+	 * @author Rafi
+	 */
+	enum QuarterName{
+		Q1, Q2, Q3, Q4;
+	}
+	
+	/**
 	 * The players in various positions
 	 */
 	private ArrayList<ArrayList<Position>> field = new ArrayList<ArrayList<Position>>();

@@ -7,16 +7,7 @@ import java.util.ArrayList;
  * 
  * @author Rafi
  */
-public class Player {
-	/**
-	 * Various quarters
-	 * 
-	 * @author Rafi
-	 */
-	enum Quarter{
-		Q1, Q2, Q3, Q4;
-	}
-	
+public class Player {	
 	/**
 	 * The player's name
 	 */
