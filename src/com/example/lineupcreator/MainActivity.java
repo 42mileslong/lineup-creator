@@ -27,8 +27,9 @@ public class MainActivity extends ActionBarActivity
 	
 	/**
 	 * Adds a player, gets input from button
+	 * @return 
 	 */
-	public static void addPlayer() {
+	public void addPlayer(View view) {
 		//TODO make this actually do something
 	}
 
