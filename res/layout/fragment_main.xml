@@ -9,12 +9,16 @@
         android:layout_height="wrap_content"
         android:layout_toLeftOf="@+id/button"
         android:hint="@string/player_name" />
-    <Button android:id="@+id/button"
-        android:layout_width="96dp"
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="64dp"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/edit_message"
         android:layout_alignParentRight="true"
         android:onClick="addPlayer"
         android:text="@string/add" />
+
 	<LinearLayout
 	    android:id="@+id/player_list"
 	    android:layout_width="match_parent"
