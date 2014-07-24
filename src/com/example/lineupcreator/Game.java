@@ -10,7 +10,7 @@ public class Game {
 	/**
 	 * THE team
 	 */
-	public static Team team = new Team();
+	private static Team team = new Team();
 	
 	/**
 	 * THE quarters
@@ -29,6 +29,13 @@ public class Game {
 	}
 	
 	//TODO player creator / deleter (to team)
+	public static void newPlayer(String name) {
+		team.addPlayer(new Player(name));
+	}
+	
+	public static void removePlayer(Player player) {
+		team.deletePlayer(player);
+	}
 	
 	//TODO position editor
 }

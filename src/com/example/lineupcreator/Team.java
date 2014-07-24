@@ -47,6 +47,19 @@ public class Team {
 	}
 	
 	/**
+	 * Removes the given player
+	 * @param player the given player
+	 */
+	public void deletePlayer(Player player) {
+		for (int i = 0; i < players.size(); i++) {
+			if (players.get(i).equals(player)) {
+				players.remove(i);
+				i--;
+			}
+		}
+	}
+	
+	/**
 	 * Returns all players
 	 * @return players in an array format
 	 */
