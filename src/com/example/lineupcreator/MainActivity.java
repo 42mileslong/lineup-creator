@@ -38,6 +38,9 @@ public class MainActivity extends ActionBarActivity
 		TextView tv = new TextView(this);
 
 		tv.setText(String.valueOf(name));
+		tv.setPadding(8, 8, 8, 8);
+		tv.setTextSize(20);
+		tv.setBackgroundColor(0xD0D0D0);
 		lv.addView(tv);// not InformationActivity.tv just write tv
 		
 		Game.newPlayer(name);
