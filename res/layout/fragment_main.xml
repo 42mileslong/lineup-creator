@@ -9,14 +9,14 @@
     tools:context="com.example.lineupcreator.MainActivity$PlaceholderFragment" >
 
 	<EditText android:id="@+id/edit_message"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/button"
         android:hint="@string/player_name" />
-    <Button
+    <Button android:id="@+id/button"
         android:layout_width="96dp"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/edit_message"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:onClick="addPlayer"
         android:text="@string/add" />
 	<LinearLayout
