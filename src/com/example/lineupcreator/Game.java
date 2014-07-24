@@ -28,11 +28,18 @@ public class Game {
 		quarters[3] = new Quarter(QuarterName.Q4);
 	}
 	
-	//TODO player creator / deleter (to team)
+	/**
+	 * Adds a new player with the given name
+	 * @param name the player name
+	 */
 	public static void newPlayer(String name) {
 		team.addPlayer(new Player(name));
 	}
 	
+	/**
+	 * Removes the given player from the team list
+	 * @param player the given player
+	 */
 	public static void removePlayer(Player player) {
 		team.deletePlayer(player);
 	}
