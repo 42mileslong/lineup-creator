@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
@@ -30,7 +31,16 @@ public class MainActivity extends ActionBarActivity
 	 * @return 
 	 */
 	public void addPlayer(View view) {
-		//TODO make this actually do something
+		EditText editText = (EditText) findViewById(R.id.edit_message);
+		String name = editText.getText().toString();
+		
+		LinearLayout lv = (LinearLayout) findViewById(R.id.player_list);
+		TextView tv = new TextView(this);
+
+		tv.setText(String.valueOf(name));
+		lv.addView(tv);// not InformationActivity.tv just write tv
+		
+		Game.newPlayer(name);
 	}
 
 	/* Prebuilt Methods */
@@ -58,6 +68,9 @@ public class MainActivity extends ActionBarActivity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+        
+        /* My Code */
+        Game.init();
     }
 
     @Override

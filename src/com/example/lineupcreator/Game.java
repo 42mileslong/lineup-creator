@@ -1,5 +1,7 @@
 package com.example.lineupcreator;
 
+import java.util.ArrayList;
+
 /**
  * Controls all game information
  * All other classes get called through this one
@@ -10,7 +12,7 @@ public class Game {
 	/**
 	 * THE team
 	 */
-	private static Team team = new Team();
+	private static Team team = new Team(new ArrayList<Player>());
 	
 	/**
 	 * THE quarters
@@ -26,6 +28,12 @@ public class Game {
 		quarters[1] = new Quarter(QuarterName.Q2);
 		quarters[2] = new Quarter(QuarterName.Q3);
 		quarters[3] = new Quarter(QuarterName.Q4);
+		
+		//adds players
+		newPlayer("Rafi Long");
+		newPlayer("Phil Long");
+		newPlayer("Waves Long");
+		newPlayer("Mel Liu");
 	}
 	
 	/**
