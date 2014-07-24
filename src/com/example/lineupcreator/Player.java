@@ -2,8 +2,6 @@ package com.example.lineupcreator;
 
 import java.util.ArrayList;
 
-import com.example.lineupcreator.Quarter.QuarterName;
-
 /**
  * Individual player information
  * 
