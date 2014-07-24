@@ -18,12 +18,18 @@
         android:layout_alignParentRight="true"
         android:onClick="addPlayer"
         android:text="@string/add" />
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:layout_below="@+id/edit_message" >
 
-	<LinearLayout
-	    android:id="@+id/player_list"
-	    android:layout_width="match_parent"
-	    android:layout_height="match_parent"
-	    android:layout_below="@+id/edit_message"
-	    android:orientation="vertical" />
+        <LinearLayout
+            android:id="@+id/player_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+        
+    </ScrollView>
     
 </RelativeLayout>
