@@ -64,6 +64,10 @@ public class Team {
 	 * @return players in an array format
 	 */
 	public Player[] getPlayers() {
-		return (Player[]) players.toArray();
+		Player[] list = new Player[players.size()];
+		for (int i = 0; i < players.size(); i++) {
+			list[i] = new Player(players.get(i).getName());
+		}
+		return list;
 	}
 }
