@@ -23,8 +23,23 @@ import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
+	
+    public void addPlayer(View view) {
+        EditText editText = (EditText) findViewById(R.id.edit_message);
+        String name = editText.getText().toString();
 
+        LinearLayout lv = (LinearLayout) findViewById(R.id.player_list);
+        TextView tv = new TextView(this);
 
+        tv.setText(String.valueOf(name));
+        tv.setPadding(8, 8, 8, 8);
+        tv.setTextSize(20);
+        tv.setBackgroundColor(0xD0D0D0);
+        lv.addView(tv);// not InformationActivity.tv just write tv
+
+        Game.newPlayer(name);
+    }
+	
 	/* Prebuilt Methods */
 	
     /**
@@ -115,41 +130,37 @@ public class MainActivity extends ActionBarActivity
     	 * @return 
     	 */
     	public void addPlayer(View view) {
-    		EditText editText = (EditText) findViewById(R.id.edit_message);
-    		String name = editText.getText().toString();
-    		
-    		LinearLayout lv = (LinearLayout) findViewById(R.id.player_list);
-    		TextView tv = new TextView(this);
+    	    // EditText editText = (EditText) findViewById(R.id.edit_message);
+    	    String name = editText.getText().toString();
 
-    		tv.setText(String.valueOf(name));
-    		tv.setPadding(8, 8, 8, 8);
-    		tv.setTextSize(20);
-    		tv.setBackgroundColor(0xD0D0D0);
-    		lv.addView(tv);
-    		
-    		Game.newPlayer(name);
+    	    // LinearLayout lv = (LinearLayout) findViewById(R.id.player_list);
+    	    TextView tv = new TextView(getActivity());
+
+    	    tv.setText(String.valueOf(name));
+    	    tv.setPadding(8, 8, 8, 8);
+    	    tv.setTextSize(20);
+    	    tv.setBackgroundColor(0xD0D0D0);
+    	    lv.addView(tv);
+
+    	    Game.newPlayer(name);
     	}
     	
     	/**
     	 * Loads all of the players
     	 */
     	public void loadPlayers() {
-    		LinearLayout lv = (LinearLayout) findViewById(R.id.player_list);
-    		TextView tv;
-    		
-    		for (int i = 0; i < Game.getPlayers().length; i++) {
-    			tv = new TextView(this);
-    			
-    			tv = new TextView(this);
-    			tv.setText(String.valueOf(Game.getPlayers()[i].getName()));
-    			tv.setPadding(8, 8, 8, 8);
-    			tv.setTextSize(20);
-    			tv.setBackgroundColor(0xD0D0D0);
-    			
-    			System.out.println("Got here!");
+    	    // LinearLayout lv = (LinearLayout) findViewById(R.id.player_list);
+    	    TextView tv;
 
-    			lv.addView(tv);
-    		}
+    	    for (int i = 0; i < Game.getPlayers().length; i++) {
+    	        tv = new TextView(getActivity());
+    	        tv.setText(String.valueOf(Game.getPlayers()[i].getName()));
+    	        tv.setPadding(8, 8, 8, 8);
+    	        tv.setTextSize(20);
+    	        tv.setBackgroundColor(0xD0D0D0);
+
+    	        lv.addView(tv);
+    	    }
     	}
 
     	@Override
@@ -161,7 +172,19 @@ public class MainActivity extends ActionBarActivity
     	    this.loadPlayers();
     	}
    	
-    	
+        EditText editText;
+        LinearLayout lv;
+        
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+            
+            editText = (EditText) rootView.findViewById(R.id.edit_message);
+            lv = (LinearLayout) rootView.findViewById(R.id.player_list);
+            
+            return rootView;
+        }
     	
         /**
          * The fragment argument representing the section number for this
@@ -182,13 +205,6 @@ public class MainActivity extends ActionBarActivity
         }
 
         public PlaceholderFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            return rootView;
         }
 
         @Override

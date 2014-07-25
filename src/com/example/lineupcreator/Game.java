@@ -28,12 +28,6 @@ public class Game {
 		quarters[1] = new Quarter(QuarterName.Q2);
 		quarters[2] = new Quarter(QuarterName.Q3);
 		quarters[3] = new Quarter(QuarterName.Q4);
-		
-		//adds players
-		newPlayer("Rafi Long");
-		newPlayer("Phil Long");
-		newPlayer("Waves Long");
-		newPlayer("Mel Liu");
 	}
 	
 	/**
