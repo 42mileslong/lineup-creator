@@ -41,9 +41,31 @@ public class MainActivity extends ActionBarActivity
 		tv.setPadding(8, 8, 8, 8);
 		tv.setTextSize(20);
 		tv.setBackgroundColor(0xD0D0D0);
-		lv.addView(tv);// not InformationActivity.tv just write tv
+		lv.addView(tv);
 		
 		Game.newPlayer(name);
+	}
+	
+	/**
+	 * Loads all of the players
+	 */
+	public void loadPlayers() {
+		LinearLayout lv = (LinearLayout) findViewById(R.id.player_list);
+		TextView tv;
+		
+		for (int i = 0; i < Game.getPlayers().length; i++) {
+			tv = new TextView(this);
+			
+			tv = new TextView(this);
+			tv.setText(String.valueOf(Game.getPlayers()[i]));
+			tv.setPadding(8, 8, 8, 8);
+			tv.setTextSize(20);
+			tv.setBackgroundColor(0xD0D0D0);
+			
+			System.out.println("Got here!");
+
+			lv.addView(tv);
+		}
 	}
 
 	/* Prebuilt Methods */
@@ -74,6 +96,7 @@ public class MainActivity extends ActionBarActivity
         
         /* My Code */
         Game.init();
+        this.loadPlayers();
     }
 
     @Override
