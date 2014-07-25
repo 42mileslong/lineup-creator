@@ -24,49 +24,6 @@ import android.widget.TextView;
 public class MainActivity extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
-	/* My Methods */
-	
-	/**
-	 * Adds a player, gets input from button
-	 * @return 
-	 */
-	public void addPlayer(View view) {
-		EditText editText = (EditText) findViewById(R.id.edit_message);
-		String name = editText.getText().toString();
-		
-		LinearLayout lv = (LinearLayout) findViewById(R.id.player_list);
-		TextView tv = new TextView(this);
-
-		tv.setText(String.valueOf(name));
-		tv.setPadding(8, 8, 8, 8);
-		tv.setTextSize(20);
-		tv.setBackgroundColor(0xD0D0D0);
-		lv.addView(tv);
-		
-		Game.newPlayer(name);
-	}
-	
-	/**
-	 * Loads all of the players
-	 */
-	public void loadPlayers() {
-		LinearLayout lv = (LinearLayout) findViewById(R.id.player_list);
-		TextView tv;
-		
-		for (int i = 0; i < Game.getPlayers().length; i++) {
-			tv = new TextView(this);
-			
-			tv = new TextView(this);
-			tv.setText(String.valueOf(Game.getPlayers()[i].getName()));
-			tv.setPadding(8, 8, 8, 8);
-			tv.setTextSize(20);
-			tv.setBackgroundColor(0xD0D0D0);
-			
-			System.out.println("Got here!");
-
-			lv.addView(tv);
-		}
-	}
 
 	/* Prebuilt Methods */
 	
@@ -93,10 +50,6 @@ public class MainActivity extends ActionBarActivity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
-        
-        /* My Code */
-        Game.init();
-        this.loadPlayers();
     }
 
     @Override
@@ -155,6 +108,61 @@ public class MainActivity extends ActionBarActivity
      * A placeholder fragment containing a simple view.
      */
     public static class PlaceholderFragment extends Fragment {
+    	/* My Methods */
+    	
+    	/**
+    	 * Adds a player, gets input from button
+    	 * @return 
+    	 */
+    	public void addPlayer(View view) {
+    		EditText editText = (EditText) findViewById(R.id.edit_message);
+    		String name = editText.getText().toString();
+    		
+    		LinearLayout lv = (LinearLayout) findViewById(R.id.player_list);
+    		TextView tv = new TextView(this);
+
+    		tv.setText(String.valueOf(name));
+    		tv.setPadding(8, 8, 8, 8);
+    		tv.setTextSize(20);
+    		tv.setBackgroundColor(0xD0D0D0);
+    		lv.addView(tv);
+    		
+    		Game.newPlayer(name);
+    	}
+    	
+    	/**
+    	 * Loads all of the players
+    	 */
+    	public void loadPlayers() {
+    		LinearLayout lv = (LinearLayout) findViewById(R.id.player_list);
+    		TextView tv;
+    		
+    		for (int i = 0; i < Game.getPlayers().length; i++) {
+    			tv = new TextView(this);
+    			
+    			tv = new TextView(this);
+    			tv.setText(String.valueOf(Game.getPlayers()[i].getName()));
+    			tv.setPadding(8, 8, 8, 8);
+    			tv.setTextSize(20);
+    			tv.setBackgroundColor(0xD0D0D0);
+    			
+    			System.out.println("Got here!");
+
+    			lv.addView(tv);
+    		}
+    	}
+
+    	@Override
+    	public void onActivityCreated (Bundle savedInstanceState) {
+    	    super.onActivityCreated(savedInstanceState);
+
+    	    /* My Code */
+    	    Game.init();
+    	    this.loadPlayers();
+    	}
+   	
+    	
+    	
         /**
          * The fragment argument representing the section number for this
          * fragment.
