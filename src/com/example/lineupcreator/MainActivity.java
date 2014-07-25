@@ -57,7 +57,7 @@ public class MainActivity extends ActionBarActivity
 			tv = new TextView(this);
 			
 			tv = new TextView(this);
-			tv.setText(String.valueOf(Game.getPlayers()[i]));
+			tv.setText(String.valueOf(Game.getPlayers()[i].getName()));
 			tv.setPadding(8, 8, 8, 8);
 			tv.setTextSize(20);
 			tv.setBackgroundColor(0xD0D0D0);
