@@ -52,5 +52,13 @@ public class Game {
 		team.deletePlayer(player);
 	}
 	
+	/**
+	 * Returns all the players on the team
+	 * @return the players on the team
+	 */
+	public static Player[] getPlayers() {
+		return team.getPlayers();
+	}
+	
 	//TODO position editor
 }
